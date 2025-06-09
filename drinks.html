@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinks - Bar ARI</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --accent: #ff6f61;
+      --accent-dark: #ff4b3e;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      background: transparent;
+      transition: background-color .3s ease;
+      z-index: 100;
+    }
+
+    header.scrolled {
+      background: var(--accent);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: transform .3s;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .mobile-nav-toggle:hover {
+      transform: rotate(90deg);
+    }
+
+    .logo {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    header.scrolled nav a,
+    header.scrolled .mobile-nav-toggle,
+    header.scrolled .logo {
+      text-shadow: none;
+    }
+
+    /* Hero */
+    .hero-drinks {
+      background: url('./drinks_sfondo.jpg') center/cover no-repeat;
+      min-height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      transition: height 0.2s ease-out;
+    }
+
+    /* Grid cards */
+    .drinks-grid {
+      padding: 4rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .drinks-grid h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-dark);
+    }
+
+    .card-content p {
+      flex: 1;
+      color: #555;
+    }
+
+    .card-content span {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c2f33;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #61dafb;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 60%;
+        height: calc(100vh);
+        background: #fff;
+        padding-top: 1rem;
+      }
+
+      nav a {
+        color: #000;
+        padding: .75rem 1rem;
+        border-bottom: 1px solid #eee;
+        text-shadow: none;
+        font-weight: 500;
+      }
+
+      header.mobile-nav-open nav {
+        display: flex;
+      }
+
+      header.mobile-nav-open {
+        background: #fff;
+      }
+
+      header.mobile-nav-open .logo,
+      header.mobile-nav-open .mobile-nav-toggle {
+        color: #333;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="mobile-nav-toggle">☰</div>
+    <div class="logo">Bar ARI</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="coffea.html">Coffea</a>
+      <a href="#">Drinks</a>
+      <a href="food.html">Food</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-drinks" data-aos="fade">
+    <h1>Drinks</h1>
+  </section>
+
+  <!-- Drinks Grid -->
+  <section class="drinks-grid">
+    <h2 data-aos="fade-up">Il Nostro Menù Drinks</h2>
+    <div class="grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="./cocktails/vodka_redbull.jpg" alt="Cocktail">
+        <div class="card-content">
+          <h3>Benzina</h3>
+          <p>Vodka, redbull, ghiaccio tritato, super+.</p>
+          <span>€5,00</span>
+        </div>
+      </div>
+      <!-- Altre card qui -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contatti">
+    <p>Via Esempio 123, Città, CAP</p>
+    <p>Tel: 0123-456789 | Email: <a href="mailto:info@bar.it">info@bar.it</a></p>
+    <p>© 2025 Bar ARI. Tutti i diritti riservati.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+
+    const header = document.querySelector('header');
+    const toggle = document.querySelector('.mobile-nav-toggle');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    toggle.addEventListener('click', () => {
+      header.classList.toggle('mobile-nav-open');
+    });
+  </script>
+</body>
+
+</html>
