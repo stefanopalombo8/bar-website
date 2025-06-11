@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vini - Bar ARI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            background: #f9f9f9;
+        }
+
+        :root {
+            --accent: #ff6f61;
+            --accent-dark: #ff4b3e;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            background: transparent;
+            transition: background-color .3s ease;
+            z-index: 100;
+        }
+
+        header.scrolled {
+            background: var(--accent);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: transform .3s;
+        }
+
+        .mobile-nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .logo {
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        header,
+        nav a,
+        .mobile-nav-toggle {
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        header.scrolled nav a,
+        header.scrolled .mobile-nav-toggle {
+            text-shadow: none;
+        }
+
+        nav {
+            margin-left: auto;
+            display: flex;
+        }
+
+        nav a {
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Hero */
+        .hero-vini {
+            background: url('./background/vini.jpg') center/cover no-repeat;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            transition: height 0.2s ease-out;
+        }
+
+        /* Menu List */
+        .menu-list {
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-list h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .menu-list .category {
+            margin-bottom: 2rem;
+        }
+
+        .menu-list .category:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-list .category h3 {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .menu-list .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-list .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-list .item p {
+            color: #555;
+            margin-bottom: 0.25rem;
+        }
+
+        .menu-list .item .price {
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2f33;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 60%;
+                height: calc(100vh);
+                background: #fff;
+                padding-top: 1rem;
+            }
+
+            nav a {
+                color: #000;
+                padding: .75rem 1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            header.mobile-nav-open nav {
+                display: flex;
+            }
+
+            header.mobile-nav-open {
+                background: #fff;
+            }
+
+            header.mobile-nav-open .logo,
+            header.mobile-nav-open .mobile-nav-toggle {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="mobile-nav-toggle">☰</div>
+        <div class="logo">Bar ARI</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="coffea.html">Coffea</a>
+            <a href="drinks.html">Drinks</a>
+            <a href="food.html">Food</a>
+            <a href="#" class="active">Vini</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-vini" data-aos="fade">
+        <h1>Vini</h1>
+    </section>
+
+    <!-- Menu List -->
+    <section class="menu-list" data-aos="fade-up">
+        <h2>La Nostra Selezione di Vini</h2>
+
+        <div class="category">
+            <h3>Rosati</h3>
+            <div class="item">
+                <p>Vignamadre IAVA Cerasuolo d’Abruzzo DOC</p>
+                <p class="price">Calice €4,00 / Bottiglia €15,00</p>
+            </div>
+            <div class="item">
+                <p>Vignamadre Capo le vigne Cerasuolo d’Abruzzo DOC</p>
+                <p class="price">Bottiglia €20,00</p>
+            </div>
+            <div class="item">
+                <p>Giannicola Di Carlo Nobu1830 Merlot rosato</p>
+                <p class="price">Bottiglia €20,00</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Rossi</h3>
+            <div class="item">
+                <p>Vignamadre Becco Reale Montepulciano d’Abruzzo DOC</p>
+                <p class="price">Calice €4,00 / Bottiglia €30,00</p>
+            </div>
+            <div class="item">
+                <p>Giannicola Di Carlo Nobu1830 Montepulciano d’Abruzzo DOC riserva</p>
+                <p class="price">Bottiglia €20,00</p>
+            </div>
+            <div class="item">
+                <p>Giannicola Di Carlo Recastro Primitivo</p>
+                <p class="price">Bottiglia €18,00</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="contatti">
+        <p>Via Esempio 123, Città, CAP</p>
+        <p>Tel: 0123-456789 | Email: <a href="mailto:info@bar.it">info@bar.it</a></p>
+        <p>© 2025 Bar ARI. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const header = document.querySelector('header');
+        const toggle = document.querySelector('.mobile-nav-toggle');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+        toggle.addEventListener('click', () => header.classList.toggle('mobile-nav-open'));
+    </script>
+</body>
+
+</html>
