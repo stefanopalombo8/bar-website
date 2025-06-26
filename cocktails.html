@@ -16,6 +16,7 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      background: #f9f9f9;
     }
 
     :root {
@@ -88,7 +89,6 @@
     .hero-drinks {
       background: url('./background/cocktails.jpg') center/cover no-repeat;
       min-height: 60vh;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -97,60 +97,92 @@
       transition: height 0.2s ease-out;
     }
 
-    /* Grid cards */
-    .drinks-grid {
-      padding: 4rem 2rem;
+    /* Menu List semplice */
+    .menu-list {
+      padding: 4rem 2rem 2rem;
       max-width: 600px;
       margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      /* rimosso margin-top negativo qui */
     }
 
-    .drinks-grid h2 {
+    .menu-list h2 {
       text-align: center;
       margin-bottom: 2rem;
       color: #333;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+    .menu-list ul {
+      list-style: none;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+    .menu-list li {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eee;
     }
 
-    .card img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+    .menu-list li:last-child {
+      border-bottom: none;
     }
 
-    .card-content {
-      padding: 1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    .menu-list .drink-name {
+      font-weight: 500;
+      color: #333;
     }
 
-    .card-content h3 {
-      margin-bottom: 0.5rem;
-      color: var(--accent-dark);
-    }
-
-    .card-content p {
-      flex: 1;
+    .menu-list .drink-desc {
+      font-size: 0.9rem;
       color: #555;
+      flex: 1;
+      margin: 0 0.5rem;
     }
 
-    .card-content span {
+    .menu-list .drink-price {
       font-weight: 600;
-      margin-top: 1rem;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
+    /* Solo su mobile stretto applica l’offset negativo */
+    @media (max-width: 480px) {
+      .menu-list {
+        margin-top: -2rem;
+      }
+    }
+
+    .gintoneria {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .macario-tonics {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .macario-tonics img {
+      margin: 0 0.5rem;
+      border-radius: 4px;
+    }
+
+    .gin-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .gin-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+    }
+
+    .gin-list li:last-child {
+      border-bottom: none;
     }
 
     /* Footer */
@@ -167,7 +199,7 @@
       text-decoration: none;
     }
 
-    /* Responsive */
+    /* Responsive nav */
     @media (max-width: 768px) {
       .mobile-nav-toggle {
         display: block;
@@ -215,7 +247,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="coffea.html">Coffea</a>
-      <a href="drinks.html">Drinks</a>
+      <a href="drinks.html" class="active">Drinks</a>
       <a href="food.html">Food</a>
       <a href="#contatti">Contatti</a>
     </nav>
@@ -226,49 +258,175 @@
     <h1>Cocktails</h1>
   </section>
 
-  <!-- Drinks Grid -->
-  <section class="drinks-grid">
-    <h2 data-aos="fade-up">Il Nostro Menù Cocktails</h2>
-    <div class="grid">
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <img src="./cocktails/vodka_redbull.jpg" alt="Cocktail">
-        <div class="card-content">
-          <h3>Benzina</h3>
-          <p>Vodka, redbull, ghiaccio tritato, super+.</p>
-          <span>€5,00</span>
-        </div>
+
+  <!-- Menu List -->
+  <section class="menu-list" data-aos="fade-up">
+    <h2>Gintoneria</h2>
+    <section class="gintoneria">
+      <!-- Immagini Macario Tonic -->
+      <div class="macario-tonics">
+        <img src="./macario/indian.png" alt="Indian tonic" width="80" />
+        <img src="./macario/sicilian.png" alt="Sicilian lemon" width="80" />
+        <img src="./macario/tonic.png" alt="Macario Tonic" width="80" />
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <img src="./cocktails/vodka_redbull.jpg" alt="Cocktail">
-        <div class="card-content">
-          <h3>Benzina</h3>
-          <p>Vodka, redbull, ghiaccio tritato, super+.</p>
-          <span>€5,00</span>
-        </div>
-      </div>
-      <!-- Altre card qui -->
-    </div>
+
+      <!-- Elenco Gin -->
+      <ul class="gin-list">
+        <li>
+          <span class="drink-name">Gordon's</span>
+          <span class="drink-price">€5</span>
+        </li>
+        <li>
+          <span class="drink-name">Bombay</span>
+          <span class="drink-price">€6</span>
+        </li>
+        <li>
+          <span class="drink-name">Tanqueray</span>
+          <span class="drink-price">€6</span>
+        </li>
+        <li>
+          <span class="drink-name">Gin mare</span>
+          <span class="drink-price">€8</span>
+        </li>
+        <li>
+          <span class="drink-name">Norder</span>
+          <span class="drink-price">€8</span>
+        </li>
+        <li>
+          <span class="drink-name">Handrinks</span>
+          <span class="drink-price">€8</span>
+        </li>
+        <li>
+          <span class="drink-name">Brokmans</span>
+          <span class="drink-price">€8</span>
+        </li>
+        <li>
+          <span class="drink-name">adamus</span>
+          <span class="drink-price">€8</span>
+        </li>
+        <li>
+          <span class="drink-name">U'mauru</span>
+          <span class="drink-price">€10</span>
+        </li>
+        <li>
+          <span class="drink-name">Gold 999.9</span>
+          <span class="drink-price">€10</span>
+        </li>
+        <li>
+          <span class="drink-name">Portofino</span>
+          <span class="drink-price">€10</span>
+        </li>
+        <li>
+          <span class="drink-name">Xibal</span>
+          <span class="drink-price">€10</span>
+        </li>
+        <li>
+          <span class="drink-name">Formentera</span>
+          <span class="drink-price">€10</span>
+        </li>
+      </ul>
+    </section>
+
+    <h2>Carta cocktail</h2>
+    <ul>
+      <li>
+        <span class="drink-name">Mojito</span>
+        <span class="drink-desc">Bacardi bianco, succo di lime, sciroppo di zucchero, soda, menta</span>
+        <span class="drink-price">€7</span>
+      </li>
+      <li>
+        <span class="drink-name">Sex on the Beach</span>
+        <span class="drink-desc">Sky vodka, peach tree, succo di arancia, cranberry</span>
+        <span class="drink-price">€7</span>
+      </li>
+      <li>
+        <span class="drink-name">Pinacolada</span>
+        <span class="drink-desc">Bacardi bianco, succo di ananas, batida</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Paloma</span>
+        <span class="drink-desc">Tequila, agave, pink soda, succo di lime</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Moscowmule</span>
+        <span class="drink-desc">Vodka skyy, ginger beer, succo di lime</span>
+        <span class="drink-price">€10</span>
+      </li>
+      <li>
+        <span class="drink-name">London Mule</span>
+        <span class="drink-desc">Gin Nordes, ginger beer, succo di lime</span>
+        <span class="drink-price">€9</span>
+      </li>
+      <li>
+        <span class="drink-name">Long Island</span>
+        <span class="drink-desc">Gin, vodka, rum, tequila, triple sec, top di cola</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Margarita</span>
+        <span class="drink-desc">Tequila, succo di lime, triple sec</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Daiquiri</span>
+        <span class="drink-desc">Bacardi bianco, succo di lime, sciroppo di zucchero</span>
+        <span class="drink-price">€6</span>
+      </li>
+      <li>
+        <span class="drink-name">Japanese</span>
+        <span class="drink-desc">Vodka, Bacardi, gin, triple sec, limone, sciroppo di zucchero, top di cola</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Negroni</span>
+        <span class="drink-desc">Gin, bitter Campari, vermouth rosso</span>
+        <span class="drink-price">€5</span>
+      </li>
+      <li>
+        <span class="drink-name">Negroni Premium</span>
+        <span class="drink-desc">Gin Tanqueray, vermouth rosso antico, bitter Campari</span>
+        <span class="drink-price">€8</span>
+      </li>
+      <li>
+        <span class="drink-name">Negroni Sbagliato</span>
+        <span class="drink-desc">Bitter Campari, vermouth rosso, top di prosecco</span>
+        <span class="drink-price">€5</span>
+      </li>
+      <li>
+        <span class="drink-name">Americano</span>
+        <span class="drink-desc">Bitter Campari, vermout rosso, top di soda</span>
+        <span class="drink-price">€5</span>
+      </li>
+      <li>
+        <span class="drink-name">Spritz</span>
+        <span class="drink-desc">Aperol/Campari/St. Germain, soda, prosecco</span>
+        <span class="drink-price">€4</span>
+      </li>
+    </ul>
   </section>
 
   <!-- Footer -->
   <footer id="contatti">
-    <p>Via Esempio 123, Città, CAP</p>
-    <p>Tel: 0123-456789 | Email: <a href="mailto:info@bar.it">info@bar.it</a></p>
-    <p>© 2025 Bar ARI. Tutti i diritti riservati.</p>
+    <p>Piazza Bucciante 23, Ari, 66010</p>
+    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a
+        href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
+    <p>
+      © 2025 Enigma. Tutti i diritti riservati. –
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 800 });
-
     const header = document.querySelector('header');
     const toggle = document.querySelector('.mobile-nav-toggle');
-
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
-
     toggle.addEventListener('click', () => {
       header.classList.toggle('mobile-nav-open');
     });

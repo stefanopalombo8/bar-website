@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Benvenuti al Bar ARI - Coffea, Drinks e Food con un tocco di animazione e stile responsive" />
+  <meta name="description" content="Benvenuti a Enigma - Coffea, Drinks e Food" />
   <meta name="theme-color" content="#ff6f61" />
-  <title>Bar ARI</title>
-  <link rel="preload" href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop" as="image" />
+  <title>Enigma menù</title>
+  <link rel="preload" href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop"
+    as="image" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <style>
     /* Reset & Variables */
@@ -23,8 +24,8 @@
     }
 
     :root {
-      --accent: #ff6f61;
-      --accent-dark: #ff4b3e;
+      --accent: #000000;
+      --accent-dark: #000000;
     }
 
     /* Header */
@@ -59,8 +60,14 @@
     }
 
     .logo {
-      font-weight: 500;
-      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 30px;
+      /* Regola in base alle dimensioni che desideri */
+      margin-right: 0.5rem;
     }
 
     header,
@@ -100,8 +107,13 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .scroll-indicator {
@@ -136,9 +148,22 @@
     }
 
     @keyframes bounce {
-      0%,20%,50%,80%,100% { transform: translateY(0); }
-      40% { transform: translateY(10px); }
-      60% { transform: translateY(5px); }
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(10px);
+      }
+
+      60% {
+        transform: translateY(5px);
+      }
     }
 
     /* Main Content */
@@ -191,7 +216,8 @@
     .menu-buttons a {
       margin: 10px .5rem;
       padding: .8rem 1.5rem;
-      background: transparent; /* Remove orange background */
+      background: transparent;
+      /* Remove orange background */
       color: inherit;
       text-decoration: none;
       border-radius: 8px;
@@ -204,7 +230,7 @@
       width: 100%;
       max-width: 200px;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform .3s;
     }
 
@@ -307,7 +333,9 @@
 <body>
   <header>
     <div class="mobile-nav-toggle">☰</div>
-    <div class="logo">Bar ARI</div>
+    <div class="logo">
+      <img src="./logo/COMPLETORisorsa5.svg" alt="Logo ENIGMA" class="logo-img" />
+    </div>
     <nav>
       <a href="#">Home</a>
       <a href="coffea.html">Coffea</a>
@@ -325,7 +353,7 @@
   </div>
 
   <main>
-    <h1 data-aos="fade-up">Benvenuti al Nostro Bar</h1>
+    <h1 data-aos="fade-up">Benvenuti ad Enigma</h1>
     <p data-aos="fade-up" data-aos-delay="100">Scorri e scegli la categoria</p>
     <div class="menu-buttons" data-aos="fade-up" data-aos-delay="200">
       <a href="coffea.html">
@@ -344,9 +372,13 @@
   </main>
 
   <footer id="contatti">
-    <p>Via Esempio 123, Città, CAP</p>
-    <p>Tel: 0123-456789 | Email: <a href="mailto:info@bar.it">info@bar.it</a></p>
-    <p>© 2025 Bar ARI. Tutti i diritti riservati.</p>
+    <p>Piazza Bucciante 23, Ari, 66010</p>
+    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a
+        href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
+    <p>
+      © 2025 Enigma. Tutti i diritti riservati. –
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

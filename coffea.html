@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffea - Bar ARI</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --accent: #ff6f61;
+      --accent-dark: #ff4b3e;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      background: transparent;
+      transition: background-color .3s ease;
+      z-index: 100;
+    }
+
+    header.scrolled {
+      background: var(--accent);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: transform .3s;
+    }
+
+    .mobile-nav-toggle:hover {
+      transform: rotate(90deg);
+    }
+
+    .logo {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    header,
+    nav a,
+    .mobile-nav-toggle {
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    header.scrolled nav a,
+    header.scrolled .mobile-nav-toggle {
+      text-shadow: none;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Hero */
+    .hero-coffea {
+      background: url('./background/caffe.jpg') center/cover no-repeat;
+      min-height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      transition: height 0.2s ease-out;
+    }
+
+    /* Category selection */
+    .categories {
+      padding: 4rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categories h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .grid-categories {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .category-card {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform .3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .category-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      transition: background .3s;
+    }
+
+    .category-card:hover .overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Footer */
+    footer {
+      background: #2c2f33;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #61dafb;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 60%;
+        height: calc(100vh);
+        background: #fff;
+        padding-top: 1rem;
+      }
+
+      nav a {
+        color: #000;
+        padding: .75rem 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      header.mobile-nav-open nav {
+        display: flex;
+      }
+
+      header.mobile-nav-open {
+        background: #fff;
+      }
+
+      header.mobile-nav-open .logo,
+      header.mobile-nav-open .mobile-nav-toggle {
+        color: #333;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="mobile-nav-toggle">☰</div>
+    <div class="logo">Bar ARI</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" class="active">Coffea</a>
+      <a href="drinks.html">Drinks</a>
+      <a href="food.html">Food</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-coffea" data-aos="fade">
+    <h1>Coffea</h1>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" data-aos="fade-up">
+    <h2>Scegli la Categoria</h2>
+    <div class="grid-categories">
+      <a href="linea-caffe.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="./icons/coffee.png" alt="Linea Caffè">
+        <div class="overlay">Linea Caffè</div>
+      </a>
+      <a href="croissanteria.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="./icons/croissant.jpeg" alt="Croissanteria">
+        <div class="overlay">Croissanteria</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contatti">
+    <p>Piazza Bucciante 23, Ari, 66010</p>
+    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
+    <p>
+      © 2025 Enigma. Tutti i diritti riservati. –
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+    const header = document.querySelector('header');
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    toggle.addEventListener('click', () => {
+      header.classList.toggle('mobile-nav-open');
+    });
+  </script>
+</body>
+
+</html>

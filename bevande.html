@@ -6,130 +6,99 @@
   <title>Bevande Analcoliche - Bar ARI</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
       background: #f9f9f9;
     }
-
     :root {
       --accent: #ff6f61;
       --accent-dark: #ff4b3e;
+      --divider: #eee;
     }
-
     /* Header */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       height: 60px;
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       padding: 0 1rem;
       background: transparent;
       transition: background-color .3s ease;
       z-index: 100;
     }
-
-    header.scrolled {
-      background: var(--accent);
-    }
-
+    header.scrolled { background: var(--accent); }
     .mobile-nav-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      margin-right: 1rem;
+      display: none; cursor: pointer;
+      font-size: 1.5rem; margin-right: 1rem;
       transition: transform .3s;
     }
-
-    .mobile-nav-toggle:hover {
-      transform: rotate(90deg);
-    }
-
-    .logo {
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-
-    header,
-    nav a,
-    .mobile-nav-toggle {
+    .mobile-nav-toggle:hover { transform: rotate(90deg); }
+    .logo { font-weight: 500; font-size: 1.2rem; }
+    header, nav a, .mobile-nav-toggle {
       color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      text-shadow: 1px 1px 3px rgba(0,0,0,.6);
     }
-
     header.scrolled nav a,
     header.scrolled .mobile-nav-toggle {
       text-shadow: none;
     }
-
     nav {
-      margin-left: auto;
-      display: flex;
+      margin-left: auto; display: flex;
     }
-
     nav a {
       margin-left: 1rem;
       text-decoration: none;
       font-weight: 500;
       color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      text-shadow: 1px 1px 3px rgba(0,0,0,.6);
     }
-
     /* Hero */
     .hero-bevande {
       background: url('./background/bevande.jpg') center/cover no-repeat;
       min-height: 60vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: #fff;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-      transition: height 0.2s ease-out;
+      text-shadow: 0 1px 3px rgba(0,0,0,.6);
+      transition: height .2s ease-out;
     }
-
-    /* List section */
+    /* Bevande List */
     .bevande-list {
-      padding: 4rem 2rem;
-      max-width: 500px;
+      padding-top: 2rem;    /* spazio superiore ridotto */
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 2rem;
+      max-width: 600px;
       margin: 0 auto;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
     }
-
-    .bevande-list h2 {
+    .bevande-list h3 {
       text-align: center;
-      margin-bottom: 2rem;
+      font-size: 1.3rem;
       color: #333;
+      margin: 2rem 0 1rem;
     }
-
     .bevande-list ul {
       list-style: none;
+      margin-bottom: 2rem;
     }
-
     .bevande-list li {
       display: flex;
       justify-content: space-between;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #eee;
+      padding: .5rem 0;
       color: #555;
       font-weight: 500;
     }
-
-    .bevande-list li:last-child {
-      border-bottom: none;
+    .bevande-list li + li {
+      border-top: 1px solid var(--divider);
     }
-
+    .divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 0;
+    }
     /* Footer */
     footer {
       background: #2c2f33;
@@ -138,44 +107,29 @@
       padding: 1.5rem 1rem 1rem;
       margin-top: 2rem;
     }
-
     footer a {
       color: #61dafb;
       text-decoration: none;
     }
-
-    /* Responsive */
+    /* Responsive nav */
     @media (max-width: 768px) {
-      .mobile-nav-toggle {
-        display: block;
-      }
-
+      .mobile-nav-toggle { display: block; }
       nav {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 60px;
-        left: 0;
-        width: 60%;
-        height: calc(100vh);
+        top: 60px; left: 0;
+        width: 60%; height: calc(100vh);
         background: #fff;
         padding-top: 1rem;
       }
-
       nav a {
         color: #000;
         padding: .75rem 1rem;
         border-bottom: 1px solid #eee;
       }
-
-      header.mobile-nav-open nav {
-        display: flex;
-      }
-
-      header.mobile-nav-open {
-        background: #fff;
-      }
-
+      header.mobile-nav-open nav { display: flex; }
+      header.mobile-nav-open { background: #fff; }
       header.mobile-nav-open .logo,
       header.mobile-nav-open .mobile-nav-toggle {
         color: #333;
@@ -183,7 +137,6 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Header -->
   <header>
@@ -192,7 +145,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="coffea.html">Coffea</a>
-      <a href="#">Bevande</a>
+      <a href="#" class="active">Bevande</a>
       <a href="drinks.html">Drinks</a>
       <a href="food.html">Food</a>
       <a href="#contatti">Contatti</a>
@@ -206,42 +159,81 @@
 
   <!-- Bevande List -->
   <section class="bevande-list" data-aos="fade-up">
-    <h2>Il Nostro Menù Analcolico</h2>
+
+    <h3>Acqua e Bibite</h3>
     <ul>
-      <li><span>Acqua Naturale</span><span>€1,50</span></li>
-      <li><span>Acqua Frizzante</span><span>€1,50</span></li>
-      <li><span>Coca-Cola</span><span>€2,50</span></li>
-      <li><span>Coca-Cola Zero</span><span>€2,50</span></li>
-      <li><span>The Freddo</span><span>€2,00</span></li>
-      <li><span>Spremuta d'Arancia</span><span>€3,00</span></li>
-      <li><span>Succo di Mela</span><span>€2,50</span></li>
-      <li><span>Aranciata</span><span>€2,50</span></li>
+      <li><span>Acqua minerale</span><span>€1,00</span></li>
+      <li><span>Acqua frizzante</span><span>€1,00</span></li>
+      <li><span>Coca-Cola a vetro</span><span>€2,50</span></li>
+      <li><span>Coca-Cola Zero a vetro</span><span>€2,50</span></li>
+      <li><span>Coca-Cola a lattina</span><span>€2,00</span></li>
+      <li><span>Fanta a vetro</span><span>€2,50</span></li>
+      <li><span>Fanta lattina</span><span>€2,00</span></li>
+      <li><span>Sprite vetro</span><span>€2,50</span></li>
     </ul>
+
+    <hr class="divider" />
+
+    <h3>The Freddo</h3>
+    <ul>
+      <li><span>Estathè limone vetro</span><span>€2,50</span></li>
+      <li><span>Estathè limone lattina</span><span>€2,00</span></li>
+      <li><span>Estathè pesca vetro</span><span>€2,50</span></li>
+      <li><span>Estathè pesca lattina</span><span>€2,00</span></li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>Succhi e Spremute</h3>
+    <ul>
+      <li><span>Succo pesca</span><span>€2,00</span></li>
+      <li><span>Succo pera</span><span>€2,00</span></li>
+      <li><span>Succo pompelmo</span><span>€2,00</span></li>
+      <li><span>Succo arancia rossa</span><span>€2,00</span></li>
+      <li><span>Succo ananas</span><span>€2,00</span></li>
+      <li><span>Succo mirtillo</span><span>€2,50</span></li>
+      <li><span>Succo albicocca</span><span>€2,00</span></li>
+      <li><span>Succo mela verde</span><span>€2,00</span></li>
+      <li><span>Succo melagrana</span><span>€2,50</span></li>
+      <li><span>Spremuta arancia</span><span>€2,00</span></li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>Macario e Altri Analcolici</h3>
+    <ul>
+      <li><span>Macario chinotto</span><span>€2,50</span></li>
+      <li><span>Macario tonica</span><span>€2,50</span></li>
+      <li><span>Macario ginger beer</span><span>€2,50</span></li>
+      <li><span>Macario Sicilian lemon</span><span>€2,50</span></li>
+      <li><span>Macario indian tonic</span><span>€2,50</span></li>
+      <li><span>Macario pink soda</span><span>€2,50</span></li>
+      <li><span>Cocktail San Pellegrino</span><span>€2,50</span></li>
+      <li><span>Crodino</span><span>€2,00</span></li>
+      <li><span>Cedrata</span><span>€2,00</span></li>
+    </ul>
+
   </section>
 
   <!-- Footer -->
   <footer id="contatti">
-    <p>Via Esempio 123, Città, CAP</p>
-    <p>Tel: 0123-456789 | Email: <a href="mailto:info@bar.it">info@bar.it</a></p>
-    <p>© 2025 Bar ARI. Tutti i diritti riservati.</p>
+    <p>Piazza Bucciante 23, Ari, 66010</p>
+    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
+    <p>© 2025 Enigma. Tutti i diritti riservati. – <a href="privacy.html">Privacy Policy</a></p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 800 });
-
     const header = document.querySelector('header');
     const toggle = document.querySelector('.mobile-nav-toggle');
-
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
-
     toggle.addEventListener('click', () => {
       header.classList.toggle('mobile-nav-open');
     });
   </script>
 </body>
-
 </html>
