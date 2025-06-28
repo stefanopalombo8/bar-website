@@ -4,85 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drinks - Bar ARI</title>
+  <title>Enigma - drink</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-    }
-
-    :root {
-      --accent: #ff6f61;
-      --accent-dark: #ff4b3e;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      background: transparent;
-      transition: background-color .3s ease;
-      z-index: 100;
-    }
-
-    header.scrolled {
-      background: var(--accent);
-    }
-
-    .mobile-nav-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      transition: transform .3s;
-    }
-
-    .mobile-nav-toggle:hover {
-      transform: rotate(90deg);
-    }
-
-    .logo {
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-
-    header,
-    nav a,
-    .mobile-nav-toggle {
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
-
-    header.scrolled nav a,
-    header.scrolled .mobile-nav-toggle {
-      text-shadow: none;
-    }
-
-    nav {
-      margin-left: auto;
-      display: flex;
-    }
-
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
 
     /* Hero */
     .hero-drinks {
@@ -100,7 +25,7 @@
     /* Category selection */
     .categories {
       padding: 4rem 2rem;
-      max-width: 800px;
+      max-width: 400px;
       margin: 0 auto;
     }
 
@@ -112,17 +37,23 @@
 
     .grid-categories {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      text-align: center;
     }
 
     .category-card {
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform .3s;
+      padding: 1rem;
+      width: 100%;
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+      text-decoration: none;
     }
 
     .category-card:hover {
@@ -130,45 +61,25 @@
     }
 
     .category-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
+      background: #000000;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
     }
 
     .category-card .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.5rem;
+      background: none;
+      color: #333;
       font-weight: 600;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      transition: background .3s;
+      font-size: 1rem;
+      text-shadow: none;
+      height: auto;
+      position: static;
     }
 
     .category-card:hover .overlay {
       background: rgba(0, 0, 0, 0.6);
-    }
-
-    /* Footer */
-    footer {
-      background: #2c2f33;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem 1rem;
-      margin-top: 2rem;
-    }
-
-    footer a {
-      color: #61dafb;
-      text-decoration: none;
     }
 
     /* Responsive */
@@ -215,7 +126,9 @@
   <!-- Header -->
   <header>
     <div class="mobile-nav-toggle">☰</div>
-    <div class="logo">Bar ARI</div>
+    <div class="logo">
+      <img src="./logo/COMPLETORisorsa5.svg" alt="Logo ENIGMA" class="logo-img" />
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="coffea.html">Coffea</a>
@@ -235,23 +148,23 @@
     <h2>Scegli la Categoria</h2>
     <div class="grid-categories">
       <a href="vini.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="./icons/vino.jpg" alt="Carta vini">
+        <img src="./logo/icone/wineRisorsa 6.svg" alt="Carta vini">
         <div class="overlay">Carta Vini</div>
       </a>
       <a href="birre.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="./icons/birre.png" alt="Birre">
+        <img src="./logo/icone/beerRisorsa 7.svg" alt="Birre">
         <div class="overlay">Birre</div>
       </a>
       <a href="cocktails.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="./icons/cocktail.jpeg" alt="Cocktails">
+        <img src="./logo/icone/cocktailRisorsa 8.svg" alt="Cocktails">
         <div class="overlay">Cocktails</div>
       </a>
       <a href="amari.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="./icons/amaro.png" alt="Amari">
+        <img src="./logo/icone/amaroRisorsa 1.svg" alt="Amari">
         <div class="overlay">Amari</div>
       </a>
       <a href="bevande.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="./icons/analcolico.jpg" alt="Bevande Analcoliche">
+        <img src="./logo/icone/analcoliciRisorsa 12.svg" alt="Bevande Analcoliche">
         <div class="overlay">Bevande Analcoliche</div>
       </a>
     </div>
@@ -260,7 +173,8 @@
   <!-- Footer -->
   <footer id="contatti">
     <p>Piazza Bucciante 23, Ari, 66010</p>
-    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
+    <p>P.IVA: 02845550694 | Tel: 3292888462 | email: <a
+        href="mailto:infoenigmabar@gmail.com">infoenigmabar@gmail.com</a></p>
     <p>
       © 2025 Enigma. Tutti i diritti riservati. –
       <a href="privacy.html">Privacy Policy</a>
@@ -269,20 +183,8 @@
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 800 });
-
-    const header = document.querySelector('header');
-    const toggle = document.querySelector('.mobile-nav-toggle');
-
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    toggle.addEventListener('click', () => {
-      header.classList.toggle('mobile-nav-open');
-    });
-  </script>
+  <script src="./script/menu_scroll.js"></script>
+  
 </body>
 
 </html>

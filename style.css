@@ -1,0 +1,99 @@
+/* Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 30px;
+    /* Regola in base alle dimensioni che desideri */
+    margin-right: 0.5rem;
+}
+
+:root {
+    --accent: #000000;
+    --accent-dark: #000000;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background: transparent;
+    transition: background-color .3s ease;
+    z-index: 100;
+}
+
+header.scrolled {
+    background: var(--accent);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: transform .3s;
+}
+
+.mobile-nav-toggle:hover {
+    transform: rotate(90deg);
+}
+
+header,
+nav a,
+.mobile-nav-toggle {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+header.scrolled nav a,
+header.scrolled .mobile-nav-toggle {
+    text-shadow: none;
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+}
+
+nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+/* Footer */
+footer {
+    background: #2c2f33;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+    font-size: .9rem;
+    position: relative;
+    z-index: 1;
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+}

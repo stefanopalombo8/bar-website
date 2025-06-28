@@ -4,86 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vini - Bar ARI</title>
+  <title>Enigma - vini</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-      background: #f9f9f9;
-    }
-
-    :root {
-      --accent: #ff6f61;
-      --accent-dark: #ff4b3e;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      background: transparent;
-      transition: background-color .3s ease;
-      z-index: 100;
-    }
-
-    header.scrolled {
-      background: var(--accent);
-    }
-
-    .mobile-nav-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      transition: transform .3s;
-    }
-
-    .mobile-nav-toggle:hover {
-      transform: rotate(90deg);
-    }
-
-    .logo {
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-
-    header,
-    nav a,
-    .mobile-nav-toggle {
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
-
-    header.scrolled nav a,
-    header.scrolled .mobile-nav-toggle {
-      text-shadow: none;
-    }
-
-    nav {
-      margin-left: auto;
-      display: flex;
-    }
-
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
 
     /* Hero */
     .hero-vini {
@@ -128,6 +52,7 @@
 
     .menu-list .category h3 {
       font-family: 'Segoe UI', sans-serif;
+      font-style: italic;
       color: var(--accent-dark);
       margin-bottom: 1rem;
       text-align: center;
@@ -163,7 +88,7 @@
     .menu-list .item .price {
       margin-left: auto;
       font-weight: 600;
-      color: var(--accent-dark);
+      color: red;
     }
 
     /* Su schermi molto piccoli, impila in verticale */
@@ -182,20 +107,6 @@
       .menu-list .item .price {
         margin-left: 0;
       }
-    }
-
-    /* Footer */
-    footer {
-      background: #2c2f33;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem 1rem;
-      margin-top: 2rem;
-    }
-
-    footer a {
-      color: #61dafb;
-      text-decoration: none;
     }
 
     /* Responsive nav */
@@ -242,7 +153,9 @@
   <!-- Header -->
   <header>
     <div class="mobile-nav-toggle">☰</div>
-    <div class="logo">Bar ARI</div>
+    <div class="logo">
+      <img src="./logo/COMPLETORisorsa5.svg" alt="Logo ENIGMA" class="logo-img" />
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="coffea.html">Coffea</a>

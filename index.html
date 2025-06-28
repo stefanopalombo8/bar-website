@@ -10,88 +10,8 @@
   <link rel="preload" href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop"
     as="image" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet">
   <style>
-    /* Reset & Variables */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-    }
-
-    :root {
-      --accent: #000000;
-      --accent-dark: #000000;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      background: transparent;
-      transition: background-color .3s ease;
-      z-index: 100;
-    }
-
-    header.scrolled {
-      background: var(--accent);
-    }
-
-    .mobile-nav-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      transition: transform .3s;
-    }
-
-    .mobile-nav-toggle:hover {
-      transform: rotate(90deg);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-img {
-      height: 30px;
-      /* Regola in base alle dimensioni che desideri */
-      margin-right: 0.5rem;
-    }
-
-    header,
-    nav a,
-    .mobile-nav-toggle {
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    }
-
-    header.scrolled nav a,
-    header.scrolled .mobile-nav-toggle {
-      text-shadow: none;
-    }
-
-    nav {
-      margin-left: auto;
-      display: flex;
-    }
-
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
 
     /* Hero */
     .hero {
@@ -227,11 +147,11 @@
     }
 
     .menu-buttons a img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform .3s;
+      background: #000000;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
     }
 
     .menu-buttons a span {
@@ -249,22 +169,6 @@
 
     .menu-buttons a:hover span {
       color: var(--accent);
-    }
-
-    /* Footer */
-    footer {
-      background: #2c2f33;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem 1rem;
-      font-size: .9rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer a {
-      color: #61dafb;
-      text-decoration: none;
     }
 
     /* Responsive */
@@ -319,7 +223,7 @@
       .menu-buttons a {
         padding: .8rem 1rem;
         font-size: 1rem;
-        width: 80%;
+        width: 40%;
         max-width: 300px;
       }
 
@@ -357,15 +261,15 @@
     <p data-aos="fade-up" data-aos-delay="100">Scorri e scegli la categoria</p>
     <div class="menu-buttons" data-aos="fade-up" data-aos-delay="200">
       <a href="coffea.html">
-        <img src="./icons/coffee.png" alt="Caffè" />
+        <img src="./logo/icone/coffeRisorsa 10.svg" alt="Caffè" />
         <span>Caffè</span>
       </a>
       <a href="drinks.html">
-        <img src="./icons/drinks.png" alt="Drink" />
+        <img src="./logo/icone/cocktailRisorsa 8.svg" alt="Drink" />
         <span>Drink</span>
       </a>
       <a href="food.html">
-        <img src="./icons/food.png" alt="Drink" />
+        <img src="./logo/icone/foodRisorsa 2.svg" alt="Drink" />
         <span>Cibo</span>
       </a>
     </div>
